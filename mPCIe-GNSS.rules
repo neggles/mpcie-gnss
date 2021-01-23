@@ -1,0 +1,138 @@
+
+(rules PCB mPCIe-GNSS
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (eu.mihosoft.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 8)
+    (layer_rule Front
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.7)
+    )
+    (layer_rule Back
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 1.6)
+    )
+  )
+  (rule
+    (width 152.4)
+    (clear 152.6)
+    (clear 76.2 (type smd_to_turn_gap))
+    (clear 231.0 (type default_"GNSS Antenna"))
+    (clear 38.2 (type smd_smd))
+    (clear 231.0 (type smd_"GNSS Antenna"))
+    (clear 231.0 (type "kicad_default"_"GNSS Antenna"))
+    (clear 231.0 (type "GNSS Antenna"_"GNSS Antenna"))
+    (clear 231.0 (type "GNSS Antenna"_Power))
+    (clear 231.0 (type "GNSS Antenna"_"USB Data"))
+  )
+  (padstack "Via[0-1]_600:300_um"
+    (shape
+      (circle Front 600.0 0.0 0.0)
+    )
+    (shape
+      (circle Back 600.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_600:300_um" "Via[0-1]_600:300_um" default
+  )
+  (via 
+    "Via[0-1]_600:300_um-kicad_default" "Via[0-1]_600:300_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_600:300_um-GNSS Antenna" "Via[0-1]_600:300_um" "GNSS Antenna"
+  )
+  (via 
+    "Via[0-1]_600:300_um-Power" "Via[0-1]_600:300_um" Power
+  )
+  (via 
+    "Via[0-1]_600:300_um-USB Data" "Via[0-1]_600:300_um" "USB Data"
+  )
+  (via_rule
+    default "Via[0-1]_600:300_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_600:300_um-kicad_default"
+  )
+  (via_rule
+    "GNSS Antenna" "Via[0-1]_600:300_um-GNSS Antenna"
+  )
+  (via_rule
+    Power "Via[0-1]_600:300_um-Power"
+  )
+  (via_rule
+    "USB Data" "Via[0-1]_600:300_um-USB Data"
+  )
+  (class default
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+  (class "kicad_default"
+    "Net-(D1-Pad1)" "Net-(GNSS1-Pad7)" "/AADET_N" "Net-(GNSS1-Pad9)" /1PPS "/GPS_RX" "/GPS_TX" "Net-(GNSS1-Pad10)"
+    "/LED_WLAN" /RESET "Net-(LED1-Pad1)" "Net-(LED2-Pad1)" "Net-(LED3-Pad1)" "Net-(U1-Pad6)" "Net-(U1-Pad8)" "Net-(PC1-Pad6)"
+    "Net-(PC1-Pad8)" "Net-(PC1-Pad10)" "Net-(PC1-Pad12)" "Net-(PC1-Pad14)" "Net-(PC1-Pad16)" "Net-(PC1-Pad48)" "Net-(PC1-Pad46)" "Net-(PC1-Pad42)"
+    "Net-(PC1-Pad32)" "Net-(PC1-Pad30)" "Net-(PC1-Pad28)" "Net-(PC1-Pad20)" "Net-(PC1-Pad17)" "Net-(PC1-Pad1)" "Net-(PC1-Pad3)" "Net-(PC1-Pad5)"
+    "Net-(PC1-Pad7)" "Net-(PC1-Pad11)" "Net-(PC1-Pad13)" "Net-(PC1-Pad51)" "Net-(PC1-Pad49)" "Net-(PC1-Pad47)" "Net-(PC1-Pad45)" "Net-(PC1-Pad33)"
+    "Net-(PC1-Pad31)" "Net-(PC1-Pad25)" "Net-(PC1-Pad23)" "Net-(PC1-Pad19)" "Net-(Q2-Pad3)"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+  (class "GNSS Antenna"
+    "/EX_ANT"
+    (clearance_class "GNSS Antenna")
+    (via_rule GNSS Antenna)
+    (rule
+      (width 1020.0)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+  (class Power
+    GND +BATT +3.3V
+    (clearance_class Power)
+    (via_rule Power)
+    (rule
+      (width 254.0)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+  (class "USB Data"
+    "/USB_D+" "/USB_D-" "/FT_D+" "/FT_D-"
+    (clearance_class "USB Data")
+    (via_rule USB Data)
+    (rule
+      (width 152.4)
+    )
+    (circuit 
+      (use_layer Front Back)
+    )
+  )
+)
