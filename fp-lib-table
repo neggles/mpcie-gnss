@@ -1,3 +1,0 @@
-(fp_lib_table
-  (lib (name "mPCIe-GNSS v1")(type KiCad)(uri "${KIPRJMOD}/mPCIe-GNSS v1.pretty")(options "")(descr ""))
-)
