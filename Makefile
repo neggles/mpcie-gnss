@@ -54,8 +54,6 @@ build/web/index.html: build/web $(BOARDSFILES)
 		-b "miniPCIe LC86L GNSS Board" "Single board" build/mPCIe-GNSS.kicad_pcb  \
 		-b "miniPCIe LC86L GNSS Board" "Panel of 2" build/mPCIe-GNSS-panel.kicad_pcb  \
 		-r "assets/mPCIe-GNSS.png" \
-		-r "assets/mPCIe-GNSS-bottom.png" \
-		-r "assets/mPCIe-GNSS-top.png" \
 		--repository "$(GITREPO)"\
 		build/web
 
