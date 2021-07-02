@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/kicad,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=kicad,visualstudiocode
 
@@ -51,3 +50,20 @@ out/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/kicad,visualstudiocode
+
+# Build outputs
+build
+fab
+
+# MS Excel lock files
+.~lock.*
+
+# secrets
+.secrets
+
+# alternates
+EltekController/alternate
+kikit-docker-jlcfab.sh
+
+# logs
+*.log

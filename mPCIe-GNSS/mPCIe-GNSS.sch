@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L mPCIe:miniPCIe PC1
+L mPCIe-GNSS-rescue:miniPCIe-mPCIe PC1
 U 1 1 5FF82652
 P 2000 4200
 F 0 "PC1" H 2000 5737 60  0000 C CNN
@@ -25,7 +25,7 @@ F 3 "https://pcisig.com/specifications/pciexpress/base" H 3100 2100 60  0001 C C
 	1    0    0    -1  
 $EndComp
 $Comp
-L L80:LC86L GNSS1
+L mPCIe-GNSS-rescue:LC86L-L80 GNSS1
 U 1 1 5FF86FE8
 P 5450 2250
 F 0 "GNSS1" H 5450 3017 50  0000 C CNN
@@ -618,7 +618,7 @@ Wire Wire Line
 Text GLabel 2800 5850 2    50   Input ~ 0
 GND
 $Comp
-L INTERFACE-CP2102-GMR_QFN28_:CP2102-GMR(QFN28) U1
+L mPCIe-GNSS-rescue:CP2102-GMR(QFN28)-INTERFACE-CP2102-GMR_QFN28_ U1
 U 1 1 600D508D
 P 5950 4500
 F 0 "U1" H 5900 4500 50  0000 L CNN
